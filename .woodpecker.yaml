@@ -1,0 +1,10 @@
+steps:
+  - name: build+test
+    image: archlinux:base-devel
+    pull: true
+    when:
+      - path:
+          exclude: ['*.md', 'LICENSE*', '.gdb*']
+    commands:
+      - make
+      - make test
